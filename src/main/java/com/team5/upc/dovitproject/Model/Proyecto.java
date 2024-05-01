@@ -21,9 +21,6 @@ public class Proyecto {
     @Column(name = "estado")
     private String estado;
 
-    @Column(name = "monto_recaudado")
-    private Double monto_recaudado;
-
     @Column(name = "monto_objetivo")
     private Double monto_objetivo;
 
