@@ -13,7 +13,7 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("Donantes")
-@PreAuthorize("hasRole('Donante')")
+@PreAuthorize("hasAnyAuthority('Donante')")
 public class DonanteController {
     @Autowired
     private DonanteServiceInterface dS;
@@ -35,8 +35,8 @@ public class DonanteController {
     @DeleteMapping("/{id}")
     public void delete(@PathVariable("id") Integer id) { dS.Delete(id); }
 
-    @GetMapping
-    @PreAuthorize("hasRole('Donante')")
+    @GetMapping("/Lista")
+    @PreAuthorize("hasAnyAuthority('Donante')")
     public List<DonanteDto> list() {
         return dS.list().stream().map(y -> {
             ModelMapper c = new ModelMapper();
@@ -44,8 +44,8 @@ public class DonanteController {
         }).collect(Collectors.toList());
     }
 
-    @GetMapping("/buscar/{departamento}/{distrito}")
-    @PreAuthorize("hasRole('Donante')")
+    @GetMapping("/Buscar/{departamento}/{distrito}")
+    @PreAuthorize("hasAnyAuthority('Donante')")
     public List<Donante> listarPorDepartamentoYDistrito(@PathVariable String departamento, @PathVariable String distrito) {
         return dS.listarporDepartamentoyDistrito(departamento, distrito);
     }

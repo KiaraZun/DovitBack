@@ -11,27 +11,28 @@ import java.util.List;
 @Service
 public class OrganizacionServiceImplements implements OrganizacionService {
 
-    private final OrganizacionRepository organizacionRepository;
+    @Autowired
+    private OrganizacionRepository oR;
 
-    public OrganizacionServiceImplements(OrganizacionRepository organizacionRepository) {
-        this.organizacionRepository = organizacionRepository;
-    }
 
     @Override
-    public void InsertarOrganizacion(Organizacion organizacion) {}
+    public void Insertar(Organizacion organizacion) {}
+
+    @Override
+    public void Actualizar(Organizacion organizacion) {}
 
     @Override
     public List<Organizacion> findAllOrganizaciones() {
-        return (List<Organizacion>) organizacionRepository.findAll();
+        return (List<Organizacion>) oR.findAll();
     }
 
     @Override
     public List<Organizacion> findByDepartamentoAndDistrito(String departamento, String distrito) {
-        return organizacionRepository.findByDepartamentoAndDistrito(departamento, distrito);
+        return oR.findByDepartamentoAndDistrito(departamento, distrito);
     }
 
     @Override
     public List<Organizacion> findByProjectCategory(String category) {
-        return organizacionRepository.findByProjectCategory(category);
+        return oR.findByProjectCategory(category);
     }
 }

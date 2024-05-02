@@ -51,4 +51,111 @@ public class Proyecto {
 
     @OneToMany (mappedBy = "proyecto", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Foros> foros;
+
+    public Proyecto() {
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+    public Double getMonto_recaudado() {
+        return monto_recaudado;
+    }
+
+    public void setMonto_recaudado(Double monto_recaudado) {
+        this.monto_recaudado = monto_recaudado;
+    }
+
+    public Double getMonto_objetivo() {
+        return monto_objetivo;
+    }
+
+    public void setMonto_objetivo(Double monto_objetivo) {
+        this.monto_objetivo = monto_objetivo;
+    }
+
+    public Date getFechaInicio() {
+        return fechaInicio;
+    }
+
+    public void setFechaInicio(Date fechaInicio) {
+        this.fechaInicio = fechaInicio;
+    }
+
+    public Date getFechaFin() {
+        return fechaFin;
+    }
+
+    public void setFechaFin(Date fechaFin) {
+        this.fechaFin = fechaFin;
+    }
+
+    public String getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
+    }
+
+    public Organizacion getOrganizacion() {
+        return organizacion;
+    }
+
+    public void setOrganizacion(Organizacion organizacion) {
+        this.organizacion = organizacion;
+    }
+
+    public List<Donaciones> getDonaciones() {
+        return donaciones;
+    }
+
+    public void setDonaciones(List<Donaciones> donaciones) {
+        this.donaciones = donaciones;
+    }
+
+    public List<Comentarios> getComentarios() {
+        return comentarios;
+    }
+
+    public void setComentarios(List<Comentarios> comentarios) {
+        this.comentarios = comentarios;
+    }
+
+    public List<Foros> getForos() {
+        return foros;
+    }
+
+    public void setForos(List<Foros> foros) {
+        this.foros = foros;
+    }
 }

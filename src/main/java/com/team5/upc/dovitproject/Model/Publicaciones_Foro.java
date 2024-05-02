@@ -30,4 +30,55 @@ public class Publicaciones_Foro {
     @ManyToOne
     @JoinColumn(name = "idForo")
     private Foros foros;
+
+    public Publicaciones_Foro() {
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public String getContenido() {
+        return contenido;
+    }
+
+    public void setContenido(String contenido) {
+        this.contenido = contenido;
+    }
+
+    public Donante getDonante() {
+        return donante;
+    }
+
+    public void setDonante(Donante donante) {
+        this.donante = donante;
+    }
+
+    public Organizacion getOrganizacion() {
+        return organizacion;
+    }
+
+    public void setOrganizacion(Organizacion organizacion) {
+        this.organizacion = organizacion;
+    }
+
+    public Foros getForos() {
+        return foros;
+    }
+
+    public void setForos(Foros foros) {
+        this.foros = foros;
+    }
 }

@@ -1,52 +1,17 @@
-package com.team5.upc.dovitproject.Model;
+package com.team5.upc.dovitproject.dto;
 
-import jakarta.persistence.*;
-
-import java.util.List;
-
-@Entity
-public class Organizacion {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idOrganizacion")
+public class OrganizacionDto {
     private int idOrganizacion;
-
-    @Column(name = "nombreOrganizacion")
     private String nombreOrganizacion;
-
-    @Column(name = "departamento")
     private String departamento;
-
-    @Column(name = "distrito")
     private String distrito;
-
-    @Column(name = "direccion")
     private String direccion;
-
-    @Column(name = "cantidadProyectos")
     private int cantidadProyectos;
-
-    @Column(name = "nombreContacto")
     private String nombreContacto;
-
-    @Column(name = "numeroTelefonicoRepresentante")
     private String numeroTelefonicoRepresentante;
-
-    @Column(name = "correoElectronicoRepresentante")
     private String correoElectronicoRepresentante;
 
-    //Relaciones
-    @OneToOne
-    @JoinColumn(name = "idUsuario", referencedColumnName = "idUsuario") // El nombre debe coincidir con el de Usuario
-    private Usuario usuario;
-
-    @OneToMany(mappedBy = "organizacion")
-    private List<Proyecto> proyectos;
-
-    @OneToMany(mappedBy = "organizacion")
-    private List<Publicaciones_Foro> publicaciones_foro;
-
-    public Organizacion() {
+    public OrganizacionDto() {
     }
 
     public int getIdOrganizacion() {
@@ -119,29 +84,5 @@ public class Organizacion {
 
     public void setCorreoElectronicoRepresentante(String correoElectronicoRepresentante) {
         this.correoElectronicoRepresentante = correoElectronicoRepresentante;
-    }
-
-    public Usuario getUsuario() {
-        return usuario;
-    }
-
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
-    }
-
-    public List<Proyecto> getProyectos() {
-        return proyectos;
-    }
-
-    public void setProyectos(List<Proyecto> proyectos) {
-        this.proyectos = proyectos;
-    }
-
-    public List<Publicaciones_Foro> getPublicaciones_foro() {
-        return publicaciones_foro;
-    }
-
-    public void setPublicaciones_foro(List<Publicaciones_Foro> publicaciones_foro) {
-        this.publicaciones_foro = publicaciones_foro;
     }
 }

@@ -20,4 +20,39 @@ public class Foros {
     @ManyToOne (fetch = FetchType.LAZY)
     @JoinColumn(name = "proyecto_id")
     private Proyecto proyecto;
+
+    public Foros() {
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public List<Publicaciones_Foro> getPublicaciones_foro() {
+        return publicaciones_foro;
+    }
+
+    public void setPublicaciones_foro(List<Publicaciones_Foro> publicaciones_foro) {
+        this.publicaciones_foro = publicaciones_foro;
+    }
+
+    public Proyecto getProyecto() {
+        return proyecto;
+    }
+
+    public void setProyecto(Proyecto proyecto) {
+        this.proyecto = proyecto;
+    }
 }
