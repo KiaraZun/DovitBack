@@ -49,6 +49,21 @@ public class Organizacion {
     public Organizacion() {
     }
 
+    public Organizacion(int idOrganizacion, String nombreOrganizacion, String departamento, String distrito, String direccion, int cantidadProyectos, String nombreContacto, String numeroTelefonicoRepresentante, String correoElectronicoRepresentante, Usuario usuario, List<Proyecto> proyectos, List<Publicaciones_Foro> publicaciones_foro) {
+        this.idOrganizacion = idOrganizacion;
+        this.nombreOrganizacion = nombreOrganizacion;
+        this.departamento = departamento;
+        this.distrito = distrito;
+        this.direccion = direccion;
+        this.cantidadProyectos = cantidadProyectos;
+        this.nombreContacto = nombreContacto;
+        this.numeroTelefonicoRepresentante = numeroTelefonicoRepresentante;
+        this.correoElectronicoRepresentante = correoElectronicoRepresentante;
+        this.usuario = usuario;
+        this.proyectos = proyectos;
+        this.publicaciones_foro = publicaciones_foro;
+    }
+
     public int getIdOrganizacion() {
         return idOrganizacion;
     }

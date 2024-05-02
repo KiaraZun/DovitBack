@@ -9,8 +9,6 @@ import java.util.List;
 
 public interface OrganizacionRepository extends CrudRepository<Organizacion,Integer> {
 
-    public List<Organizacion> findAll();
-
     //Buscar por departamento y distrito
     @Query("SELECT o FROM Organizacion o WHERE o.departamento = :departamento AND o.distrito = :distrito")
     List<Organizacion> findByDepartamentoAndDistrito(@Param("departamento") String departamento, @Param("distrito") String distrito);
