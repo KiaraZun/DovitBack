@@ -1,10 +1,13 @@
 package com.team5.upc.dovitproject.Model;
 
 import jakarta.persistence.*;
+import jdk.jfr.DataAmount;
+import lombok.Data;
 
 import java.util.List;
 
 @Entity
+@Data
 public class Foros {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

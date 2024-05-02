@@ -1,11 +1,13 @@
 package com.team5.upc.dovitproject.Model;
 
 import jakarta.persistence.*;
+import lombok.Data;
 
 import java.util.Date;
 import java.util.List;
 
 @Entity
+@Data
 public class Proyecto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
