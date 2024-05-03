@@ -68,4 +68,16 @@ public class DonacionServiceImplements implements DonacionServiceInterface {
         }
         return ListaFinalDeDonaciones;
     }
+
+    @Override
+    public List<String[]> prueba(Integer idDonante) {
+        return donacionRepository.prueba(idDonante);
+    }
+
+    @Override
+    public List<Donaciones> donaciones(Integer idDonante) {
+        return donacionRepository.donaciones(idDonante);
+    }
+
+
 }
