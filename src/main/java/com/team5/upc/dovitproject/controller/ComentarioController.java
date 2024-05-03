@@ -1,15 +1,11 @@
 package com.team5.upc.dovitproject.controller;
 
-
 import com.team5.upc.dovitproject.Model.Comentarios;
-import com.team5.upc.dovitproject.Model.Donante;
 import com.team5.upc.dovitproject.dto.ComentarioDto;
-import com.team5.upc.dovitproject.dto.DonanteDto;
 import com.team5.upc.dovitproject.serviceinterfaces.ComentarioServiceInterface;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -58,4 +54,3 @@ public class ComentarioController {
         }).collect(Collectors.toList());
     }
 }
-

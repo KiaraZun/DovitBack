@@ -3,15 +3,14 @@ package com.team5.upc.dovitproject.dto;
 import java.util.List;
 
 public class ComentariosPorProyecto {
-
-    private Integer idProyecto;
+    private int idProyecto;
     private List<ComentarioDto> comentarios;
 
-    public Integer getIdProyecto() {
+    public int getIdProyecto() {
         return idProyecto;
     }
 
-    public void setIdProyecto(Integer idProyecto) {
+    public void setIdProyecto(int idProyecto) {
         this.idProyecto = idProyecto;
     }
 

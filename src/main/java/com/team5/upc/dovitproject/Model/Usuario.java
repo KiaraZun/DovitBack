@@ -41,6 +41,8 @@ public class Usuario {
     @JoinColumn(name = "idUsuario")
     private List<Rol> rol;
 
+    public Usuario() {
+    }
     public int getId() {
         return id;
     }

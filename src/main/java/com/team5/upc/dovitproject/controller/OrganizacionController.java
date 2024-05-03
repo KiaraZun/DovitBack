@@ -1,57 +1,55 @@
 package com.team5.upc.dovitproject.controller;
 
-import com.team5.upc.dovitproject.Model.Donante;
 import com.team5.upc.dovitproject.Model.Organizacion;
-import com.team5.upc.dovitproject.dto.DonanteDto;
-import com.team5.upc.dovitproject.serviceinterfaces.OrganizacionService;
+import com.team5.upc.dovitproject.dto.OrganizacionDto;
+import com.team5.upc.dovitproject.serviceinterfaces.OrganizacionServiceInterface;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("Organizaciones")
-@PreAuthorize("hasRole('Organizacion')")
+@PreAuthorize("hasAnyAuthority('Organizacion')")
 public class OrganizacionController {
-
-    private final OrganizacionService organizacionService;
-
     @Autowired
-    public OrganizacionController(OrganizacionService organizacionService) {
-        this.organizacionService = organizacionService;
-    }
+    private OrganizacionServiceInterface oS;
 
-    @PostMapping
-    public void registrar(@RequestBody DonanteDto dto) {
+    @PostMapping("/insertar")
+    public void registrar(@RequestBody OrganizacionDto dto) {
         ModelMapper c = new ModelMapper();
         Organizacion o = c.map(dto, Organizacion.class);
-        organizacionService.InsertarOrganizacion(o);
+        oS.Insertar(o);
     }
 
-    @GetMapping
-    @PreAuthorize("hasRole('Organizacion')")
-    public ResponseEntity<List<Organizacion>> ListaOrganizaciones() {
-        List<Organizacion> organizaciones = organizacionService.findAllOrganizaciones();
-        return ResponseEntity.ok(organizaciones);
+    @PutMapping("/actualizar")
+    public void actualizar(@RequestBody OrganizacionDto dto) {
+        ModelMapper modelMapper = new ModelMapper();
+        Organizacion o = modelMapper.map(dto, Organizacion.class);
+        oS.Actualizar(o);
     }
 
-    @GetMapping("/ListarPorUbicacion")
-    @PreAuthorize("hasRole('Organizacion')")
-    public ResponseEntity<List<Organizacion>> listaOrganizacionesByLocation(
-            @RequestParam String departamento,
-            @RequestParam String distrito) {
-        List<Organizacion> organizaciones = organizacionService.findByDepartamentoAndDistrito(departamento, distrito);
-        return ResponseEntity.ok(organizaciones);
+    @GetMapping("/Lista")
+    @PreAuthorize("hasAnyAuthority('Organizacion')")
+    public List<OrganizacionDto> list() {
+        return oS.lista().stream().map(y -> {
+            ModelMapper c = new ModelMapper();
+            return c.map(y, OrganizacionDto.class);
+        }).collect(Collectors.toList());
     }
 
-    @GetMapping("/ListarPorCategoria")
-    @PreAuthorize("hasRole('Organizacion')")
-    public ResponseEntity<List<Organizacion>> listaOrganizacionesByCategory(
-            @RequestParam String category) {
-        List<Organizacion> organizaciones = organizacionService.findByProjectCategory(category);
-        return ResponseEntity.ok(organizaciones);
+    @GetMapping("/Buscar/{departamento}/{distrito}")
+    @PreAuthorize("hasAnyAuthority('Organizacion')")
+    public List<Organizacion> listarPorDepartamentoYDistrito(@PathVariable String departamento, @PathVariable String distrito) {
+        return oS.ListarDepartamentoAndDistrito(departamento, distrito);
+    }
+
+    @GetMapping("/BUscar/{categoria}")
+    @PreAuthorize("hasAnyAuthority('Organizacion')")
+    public List<Organizacion> listarPorCategoria(@PathVariable String categoria) {
+        return oS.ListarCategory(categoria);
     }
 }

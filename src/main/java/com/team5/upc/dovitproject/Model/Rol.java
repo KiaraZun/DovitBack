@@ -14,6 +14,8 @@ public class Rol implements Serializable{
     @Column(name = "rol")
     private String rol;
 
+    public Rol() {
+    }
     public Usuario getUser() {
         return user;
     }

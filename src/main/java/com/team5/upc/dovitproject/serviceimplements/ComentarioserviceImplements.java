@@ -1,7 +1,6 @@
 package com.team5.upc.dovitproject.serviceimplements;
 
 import com.team5.upc.dovitproject.Model.Comentarios;
-import com.team5.upc.dovitproject.Model.Donante;
 import com.team5.upc.dovitproject.repository.ComentarioRepository;
 import com.team5.upc.dovitproject.serviceinterfaces.ComentarioServiceInterface;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +9,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class ComentarioServiceImplements implements ComentarioServiceInterface {
+public class ComentarioserviceImplements implements ComentarioServiceInterface {
     @Autowired
     private ComentarioRepository cR;
 
@@ -31,14 +30,11 @@ public class ComentarioServiceImplements implements ComentarioServiceInterface {
 
     @Override
     public void Delete(int idComentario) {
-
         cR.deleteById(idComentario);
     }
 
     @Override
-    public List<Comentarios> findAllByProyectoId(Integer idProyecto) {
+    public List<Comentarios> findAllByProyectoId (int idProyecto) {
         return cR.findAllByProyectoId(idProyecto);
     }
-
-
 }
