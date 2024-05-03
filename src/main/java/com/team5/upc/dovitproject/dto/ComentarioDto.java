@@ -1,5 +1,8 @@
 package com.team5.upc.dovitproject.dto;
 
+import com.team5.upc.dovitproject.Model.Donante;
+import com.team5.upc.dovitproject.Model.Proyecto;
+
 public class ComentarioDto {
 
     private Integer id;
@@ -12,6 +15,10 @@ public class ComentarioDto {
     private Integer idProyecto;
 
     private Integer idDonante;
+
+    private Proyecto proyecto;
+
+    private Donante donante;
 
     // Getters y Setters
 
@@ -53,5 +60,22 @@ public class ComentarioDto {
 
     public void setIdDonante(Integer idDonante) {
         this.idDonante = idDonante;
+    }
+
+
+    public Proyecto getProyecto() {
+        return proyecto;
+    }
+
+    public void setProyecto(Proyecto proyecto) {
+        this.proyecto = proyecto;
+    }
+
+    public Donante getDonante() {
+        return donante;
+    }
+
+    public void setDonante(Donante donante) {
+        this.donante = donante;
     }
 }
