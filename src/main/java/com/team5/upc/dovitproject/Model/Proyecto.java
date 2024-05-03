@@ -1,7 +1,6 @@
 package com.team5.upc.dovitproject.Model;
 
 import jakarta.persistence.*;
-
 import java.util.Date;
 import java.util.List;
 
@@ -21,11 +20,8 @@ public class Proyecto {
     @Column(name = "estado")
     private String estado;
 
-    @Column(name = "monto_recaudado")
-    private Double monto_recaudado;
-
     @Column(name = "monto_objetivo")
-    private Double monto_objetivo;
+    private Integer monto_objetivo;
 
     @Column(name = "fechaInicio")
     @Temporal(TemporalType.DATE)
@@ -53,6 +49,21 @@ public class Proyecto {
     private List<Foros> foros;
 
     public Proyecto() {
+    }
+
+    public Proyecto(Integer id, String titulo, String descripcion, String estado, Integer monto_objetivo, Date fechaInicio, Date fechaFin, String categoria, Organizacion organizacion, List<Donaciones> donaciones, List<Comentarios> comentarios, List<Foros> foros) {
+        this.id = id;
+        this.titulo = titulo;
+        this.descripcion = descripcion;
+        this.estado = estado;
+        this.monto_objetivo = monto_objetivo;
+        this.fechaInicio = fechaInicio;
+        this.fechaFin = fechaFin;
+        this.categoria = categoria;
+        this.organizacion = organizacion;
+        this.donaciones = donaciones;
+        this.comentarios = comentarios;
+        this.foros = foros;
     }
 
     public Integer getId() {
@@ -87,19 +98,11 @@ public class Proyecto {
         this.estado = estado;
     }
 
-    public Double getMonto_recaudado() {
-        return monto_recaudado;
-    }
-
-    public void setMonto_recaudado(Double monto_recaudado) {
-        this.monto_recaudado = monto_recaudado;
-    }
-
-    public Double getMonto_objetivo() {
+    public int getMonto_objetivo() {
         return monto_objetivo;
     }
 
-    public void setMonto_objetivo(Double monto_objetivo) {
+    public void setMonto_objetivo(int monto_objetivo) {
         this.monto_objetivo = monto_objetivo;
     }
 
