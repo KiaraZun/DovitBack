@@ -31,7 +31,6 @@ public class DonacionController {
         donacionServiceImplements.InsertarDonacion(o);
     }
 
-
     @GetMapping("/ListarDonacionesPorIdDonante/{idDonante}")
     @PreAuthorize("hasAuthority('Donante')")
     public ResponseEntity<List<DonacionDto>> ListarDonacionesPorIdDonante(@PathVariable("idDonante") Integer idDonante) {

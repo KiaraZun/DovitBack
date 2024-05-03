@@ -12,6 +12,7 @@ public class OrganizacionDto {
     private String nombreContacto;
     private String numeroTelefonicoRepresentante;
     private String correoElectronicoRepresentante;
+    private Integer idUsuario;
 
     private Set<String> categories;
 
@@ -94,4 +95,8 @@ public class OrganizacionDto {
     public void setCategories(Set<String> categories) {
         this.categories = categories;
     }
+
+    public Integer getIdUsuario() { return idUsuario; }
+
+    public void setIdUsuario(Integer idUsuario) { this.idUsuario = idUsuario; }
 }

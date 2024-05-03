@@ -3,14 +3,15 @@ package com.team5.upc.dovitproject.dto;
 import com.team5.upc.dovitproject.Model.Donante;
 import com.team5.upc.dovitproject.Model.Foros;
 import com.team5.upc.dovitproject.Model.Organizacion;
+import io.swagger.models.auth.In;
 
 public class Publicaciones_ForoDto {
     private Integer id;
     private String titulo;
     private String contenido;
-    private Donante donante;
-    private Organizacion organizacion;
-    private Foros foros;
+    private Integer donante;
+    private Integer organizacion;
+    private Integer foros;
 
     public Integer getId() {
         return id;
@@ -24,15 +25,15 @@ public class Publicaciones_ForoDto {
         return contenido;
     }
 
-    public Donante getDonante() {
+    public Integer getDonante() {
         return donante;
     }
 
-    public Organizacion getOrganizacion() {
+    public Integer getOrganizacion() {
         return organizacion;
     }
 
-    public Foros getForos() {
+    public Integer getForos() {
         return foros;
     }
 
@@ -48,15 +49,15 @@ public class Publicaciones_ForoDto {
         this.contenido = contenido;
     }
 
-    public void setDonante(Donante donante) {
+    public void setDonante(Integer donante) {
         this.donante = donante;
     }
 
-    public void setOrganizacion(Organizacion organizacion) {
+    public void setOrganizacion(Integer organizacion) {
         this.organizacion = organizacion;
     }
 
-    public void setForos(Foros foros) {
+    public void setForos(Integer foros) {
         this.foros = foros;
     }
 }

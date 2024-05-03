@@ -7,6 +7,8 @@ public class ComentarioDto {
 
     private String descripcion;
 
+    private Integer idDonante;
+
 
     public Integer getId() {
         return id;
@@ -30,5 +32,13 @@ public class ComentarioDto {
 
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
+    }
+
+    public Integer getIdDonante() {
+        return idDonante;
+    }
+
+    public void setIdDonante(Integer idDonante) {
+        this.idDonante = idDonante;
     }
 }

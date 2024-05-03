@@ -1,6 +1,5 @@
 package com.team5.upc.dovitproject.repository;
 
-import com.team5.upc.dovitproject.Model.Donante;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;

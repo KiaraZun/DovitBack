@@ -1,5 +1,7 @@
 package com.team5.upc.dovitproject.dto;
 
+import jakarta.persistence.Column;
+
 public class DonanteDto {
     private int idDonante;
     private String nombreCompleto;
@@ -7,6 +9,7 @@ public class DonanteDto {
     private String departamento;
     private String distrito;
     private String direccion;
+    private Integer idUsuario;
 
     public int getIdDonante() {return idDonante;}
     public void setIdDonante(int idDonante) {this.idDonante = idDonante;}
@@ -25,4 +28,8 @@ public class DonanteDto {
 
     public String getDireccion() {return direccion;}
     public void setDireccion(String direccion) {this.direccion = direccion;}
+
+    public Integer getIdUsuario() { return idUsuario; }
+
+    public void setIdUsuario(Integer idUsuario) { this.idUsuario = idUsuario; }
 }

@@ -19,11 +19,6 @@ public class UsuarioServiceImplements implements UsuarioService{
     }
 
     @Override
-    public List<Usuario> list() {
-        return uR.findAll();
-    }
-
-    @Override
     public void delete(int idUsuario) {
         uR.deleteById(idUsuario);
     }
@@ -31,5 +26,9 @@ public class UsuarioServiceImplements implements UsuarioService{
     @Override
     public Usuario listarId(int idUsuario) {
         return uR.findById(idUsuario).orElse(new Usuario());
+    }
+    @Override
+    public List<Usuario> list(){
+        return (List<Usuario>) uR.findAll();
     }
 }
